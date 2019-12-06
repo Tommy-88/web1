@@ -15,7 +15,7 @@ usermod -a -G g1 u1
 
 id u1 >> ~/work5.log
 
-usermod -a -G g1 vitalyboytsov
+usermod -a -G g1 slava
 
 grep g1 /etc/group | awk -F : '{print $4}' >> ~/work5.log
 
