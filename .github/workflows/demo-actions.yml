@@ -1,0 +1,23 @@
+#-----------------------------------
+#MYFirst  github actions 
+#
+#-----------------------------------
+name: Demo-actions
+
+on: 
+   push:
+     branches: 
+        - master 
+
+jobs:
+  my_testings:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print hello
+      run: echo "Hello wrld from testing"
+  
+  print: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "Hello wrld from print"
