@@ -3,7 +3,9 @@
 #
 #-----------------------------------
 name: Demo-actions
-
+env:
+   APPLICATION_NAME: "MyFlask"
+   PACKAGE         : "flask_deploy_ver_${{ github.sha }}"
 on: 
    push:
      branches: 
@@ -15,6 +17,10 @@ jobs:
     steps:
     - name: print hello
       run: echo "Hello wrld from testing"
+    - name: execute few commands
+      run: |
+         echo "Hello Massage1"
+         echo "Application Name: ${{ env.APPLICATION_NAME }}"
   
   print: 
     runs-on: ubuntu-latest
@@ -22,3 +28,5 @@ jobs:
     steps:
       - name: print hello
         run: echo "Hello wrld from print"
+      - name: print PKG name 
+        run: echo " ${{ env.PACKAGE }}" 
